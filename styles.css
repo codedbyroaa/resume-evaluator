@@ -1,0 +1,115 @@
+/* 1. إعداد المتغيرات (Custom Properties) لسهولة تعديل الألوان لاحقاً */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --bg-page: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-light: #ffffff;
+  --border-color: #cbd5e1;
+}
+
+/* 2. إعادة ضبط المسافات (Reset) وتطبيق نوع الخط */
+* {
+  box-sizing: border-box; /* يجعل الـ padding ضمن عرض العنصر */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+}
+
+/* 3. تصميم الترويسة (Header) باستخدام Flexbox */
+header {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* يضع العنوان يمين والروابط يسار */
+  align-items: center; /* يوسط العناصر عمودياً */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* 4. تصميم المحتوى الرئيسي باستخدام Grid (عمودين متساويين) */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 1fr تعني جزء متساوٍ من المساحة */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* تصميم المربعات البيضاء للنموذج والنتائج */
+.form-panel, .results-panel {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ظل خفيف */
+}
+
+/* 5. تصميم عناصر النموذج */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+textarea, input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color 0.2s ease; /* حركة ناعمة عند التحديد */
+}
+
+/* تأثير عند النقر داخل الحقل */
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* 6. تصميم الزر */
+button {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+button:active {
+  transform: scale(0.98); /* تصغير خفيف جداً عند النقر */
+}
+
+/* 7. التصميم المتجاوب للجوال (Media Query) */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr; /* تحويل العرض إلى عمود واحد فقط في الشاشات الصغيرة */
+  }
+}
