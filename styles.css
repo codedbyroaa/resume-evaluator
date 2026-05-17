@@ -1,115 +1,150 @@
-/* 1. إعداد المتغيرات (Custom Properties) لسهولة تعديل الألوان لاحقاً */
+/* --- 1. استيراد خطوط حديثة --- */
+/* سنستخدم خط 'Inter' لتصميم عصري ونظيف جداً */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- 2. لوحة الألوان الهادئة والأنيقة (Variables) --- */
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --bg-page: #f5f7fa;
-  --card-bg: #ffffff;
-  --text-dark: #1a1a2e;
+  /* ألوان أساسية هادئة مستوحاة من الطبيعة (Sage Green & Soft Warm Gray) */
+  --primary: #769F8E;          /* أخضر مريمي هادئ (يوحي بالثقة والهدوء) */
+  --primary-dark: #5C7F70;     /* درجة أغمق قليلاً للـ Hover */
+  
+  --bg-page: #FAF9F7;          /* أبيض مائل قليلاً للصفاء/البيج (أريح للعين من الأبيض الناصع) */
+  --card-bg: #FFFFFF;          /* الأبيض الصافي للمربعات (لتبرز من الخلفية) */
+  
+  --text-main: #2C2A28;        /* أسود دافئ داكن جداً (ليس أسوداً حاداً Pure Black) */
+  --text-muted: #6B655F;       /* رمادي دافئ للنصوص الثانوية والـ Placeholders */
   --text-light: #ffffff;
-  --border-color: #cbd5e1;
+  
+  --border-color: #E2DFD8;     /* لون حدود خفيف جداً ودافئ */
+  
+  /* ظل خفيف وناعم جداً لإعطاء شعور بالعمق والأناقة */
+  --soft-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
 }
 
-/* 2. إعادة ضبط المسافات (Reset) وتطبيق نوع الخط */
+/* --- 3. إعادة الضبط والخطوط العامة --- */
 * {
-  box-sizing: border-box; /* يجعل الـ padding ضمن عرض العنصر */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: var(--bg-page);
-  color: var(--text-dark);
+  color: var(--text-main);
+  /* تطبيق خط Inter العصري */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased; /* لجعل الخط أنعم على شاشات الماك */
+  line-height: 1.6; /* زيادة المسافة بين السطور لراحة القراءة */
 }
 
-/* 3. تصميم الترويسة (Header) باستخدام Flexbox */
+/* --- 4. تصميم الترويسة (Header) - أسلوب مينيمال — */
 header {
-  background-color: var(--text-dark);
-  color: var(--text-light);
-  padding: 1rem 2rem;
+  background-color: var(--card-bg); /* ترويسة بيضاء بدلاً من الداكنة لشعور بالانفتاح */
+  border-bottom: 1px solid var(--border-color); /* حد سفلي رفيع جداً */
+  padding: 1.25rem 2rem;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between; /* يضع العنوان يمين والروابط يسار */
-  align-items: center; /* يوسط العناصر عمودياً */
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.header-content nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  margin-left: 15px;
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px; /* تضييق المسافة بين الحروف لعناوين عصرية */
+  color: var(--text-main);
 }
 
-/* 4. تصميم المحتوى الرئيسي باستخدام Grid (عمودين متساويين) */
+.header-content nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.2s ease;
+}
+
+.header-content nav a:hover {
+  color: var(--primary); /* تلوين خفيف عند التمرير */
+}
+
+/* --- 5. تنسيق المحتوى الرئيسي والشبكة (Grid) --- */
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 1fr تعني جزء متساوٍ من المساحة */
-  gap: 24px;
+  grid-template-columns: 1.2fr 1fr; /* جعل قسم النموذج أعرض قليلاً للشعور بالاحترافية */
+  gap: 32px; /* زيادة المسافة بين العمودين لـ " Breathing Room" */
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 3rem auto; /* زيادة المسافة العلوية والسفلية */
   padding: 0 2rem;
 }
 
-/* تصميم المربعات البيضاء للنموذج والنتائج */
+/* تصميم المربعات (Cards) بأسلوبrefined — */
 .form-panel, .results-panel {
   background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ظل خفيف */
+  padding: 2.5rem; /* زيادة الحشو الداخلي */
+  border-radius: 12px; /* زوايا دائرية أنعم قليلاً */
+  box-shadow: var(--soft-shadow); /* تطبيق الظل الناعم */
+  border: 1px solid rgba(226, 223, 216, 0.5); /* حد شفاف جداً */
 }
 
-/* 5. تصميم عناصر النموذج */
+/* --- 6. تصميم حقول النموذج (Form) والدعوة الهدوء — */
 .input-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem; /* مسافة أكبر قليلاً */
 }
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  margin-bottom: 0.7rem;
+  font-weight: 600; /* خط أعرض قليلاً للوضوح */
+  font-size: 0.9rem; /* أصغر قليلاً لمظهر "أنيق" */
+  color: var(--text-main);
+  text-transform: uppercase; /* جعل العناوين حروفاً كبيرة لمظهر منظم */
+  letter-spacing: 1px; /* زيادة المسافة بين حروف العنوان */
 }
 
 textarea, input[type="file"] {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem; /* زيادة الحشو الداخلي لراحة الكتابة */
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  transition: border-color 0.2s ease; /* حركة ناعمة عند التحديد */
+  border-radius: 8px; /* زوايا أنعم */
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: all 0.2s ease; /* حركة ناعمة لكل التغييرات */
 }
 
-/* تأثير عند النقر داخل الحقل */
+/* تأثير الـ Placeholder هادئ */
+textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* تأثير الـ Focus (التركيز) - الأهم للهدوء النفسي */
 textarea:focus {
-  border-color: var(--primary);
+  border-color: var(--primary); /* تلوين الحد بالأخضر الهادئ */
   outline: none;
+  /* إضافة توهج (Shadow) أخضر هادئ وناعم جداً حول الحقل */
+  box-shadow: 0 0 0 4px rgba(118, 159, 142, 0.15); 
+  background-color: #FAFBFB; /* تغيير خلفية الحقل بشكل غير ملحوظ لإشعار المستخدم بالتركيز */
 }
 
-/* 6. تصميم الزر */
+/* تنسيق زر الرفع */
+input[type="file"] {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --- 7. تصميم زر الإرسال (Refined Button) --- */
 button {
-  background-color: var(--primary);
+  background-color: var(--primary); /* الأخضر المريمي الهادئ */
   color: var(--text-light);
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem;
   width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: var(--primary-dark);
-}
-
-button:active {
-  transform: scale(0.98); /* تصغير خفيف جداً عند النقر */
-}
-
-/* 7. التصميم المتجاوب للجوال (Media Query) */
-@media (max-width: 700px) {
-  main {
-    grid-template-columns: 1fr; /* تحويل العرض إلى عمود واحد فقط في الشاشات الصغيرة */
-  }
+  border-radius: 8px;
 }
