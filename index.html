@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Evaluator</title>
-    <!-- ربط ملف التصميم CSS -->
+    
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- الترويسة -->
+    
     <header>
       <div class="header-content">
         <h1>Resume Evaluator</h1>
@@ -19,35 +19,35 @@
       </div>
     </header>
 
-    <!-- المحتوى الرئيسي (مقسم إلى قسمين باستخدام Grid) -->
+ 
     <main>
-      <!-- القسم الأول: النموذج -->
+     
       <section class="form-panel">
         <form id="evaluator-form">
-          <!-- حقل الوصف الوظيفي -->
+         
           <div class="input-group">
             <label for="job-description">Job Description</label>
             <textarea id="job-description" rows="5" placeholder="Paste the job description here..."></textarea>
           </div>
 
-          <!-- حقل الأوامر المخصصة (Prompt) -->
+         
           <div class="input-group">
             <label for="custom-prompt">Custom Prompt (Optional)</label>
             <textarea id="custom-prompt" rows="3" placeholder="Any specific instructions for the AI?"></textarea>
           </div>
 
-          <!-- حقل رفع السيرة الذاتية -->
+      
           <div class="input-group">
             <label for="resume">Upload Resume (PDF only)</label>
             <input type="file" id="resume" accept=".pdf" />
           </div>
 
-          <!-- زر الإرسال -->
+        
           <button type="submit">Evaluate Resume</button>
         </form>
       </section>
 
-      <!-- القسم الثاني: النتائج -->
+  
       <section class="results-panel">
         <h2>Evaluation Results</h2>
         <div id="results">
@@ -56,7 +56,7 @@
       </section>
     </main>
 
-    <!-- ربط ملف الجافاسكريبت (في النهاية لضمان تحميل عناصر HTML أولاً) -->
+
     <script src="script.js"></script>
   </body>
 </html>
