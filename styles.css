@@ -1,27 +1,26 @@
-/* --- 1. استيراد خطوط حديثة --- */
-/* سنستخدم خط 'Inter' لتصميم عصري ونظيف جداً */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* --- 2. لوحة الألوان الهادئة والأنيقة (Variables) --- */
+
 :root {
-  /* ألوان أساسية هادئة مستوحاة من الطبيعة (Sage Green & Soft Warm Gray) */
-  --primary: #769F8E;          /* أخضر مريمي هادئ (يوحي بالثقة والهدوء) */
-  --primary-dark: #5C7F70;     /* درجة أغمق قليلاً للـ Hover */
+ 
+  --primary: #769F8E;         
+  --primary-dark: #5C7F70;     
   
-  --bg-page: #FAF9F7;          /* أبيض مائل قليلاً للصفاء/البيج (أريح للعين من الأبيض الناصع) */
-  --card-bg: #FFFFFF;          /* الأبيض الصافي للمربعات (لتبرز من الخلفية) */
+  --bg-page: #FAF9F7;          
+  --card-bg: #FFFFFF;         
   
-  --text-main: #2C2A28;        /* أسود دافئ داكن جداً (ليس أسوداً حاداً Pure Black) */
-  --text-muted: #6B655F;       /* رمادي دافئ للنصوص الثانوية والـ Placeholders */
+  --text-main: #2C2A28;       
+  --text-muted: #6B655F;      
   --text-light: #ffffff;
   
-  --border-color: #E2DFD8;     /* لون حدود خفيف جداً ودافئ */
+  --border-color: #E2DFD8;     
   
-  /* ظل خفيف وناعم جداً لإعطاء شعور بالعمق والأناقة */
+ 
   --soft-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
 }
 
-/* --- 3. إعادة الضبط والخطوط العامة --- */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,16 +30,15 @@
 body {
   background-color: var(--bg-page);
   color: var(--text-main);
-  /* تطبيق خط Inter العصري */
+  
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased; /* لجعل الخط أنعم على شاشات الماك */
-  line-height: 1.6; /* زيادة المسافة بين السطور لراحة القراءة */
-}
+  -webkit-font-smoothing: antialiased; 
+  line-height: 1.6; 
 
-/* --- 4. تصميم الترويسة (Header) - أسلوب مينيمال — */
+
 header {
-  background-color: var(--card-bg); /* ترويسة بيضاء بدلاً من الداكنة لشعور بالانفتاح */
-  border-bottom: 1px solid var(--border-color); /* حد سفلي رفيع جداً */
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color); 
   padding: 1.25rem 2rem;
 }
 
@@ -55,7 +53,7 @@ header {
 .header-content h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.5px; /* تضييق المسافة بين الحروف لعناوين عصرية */
+  letter-spacing: -0.5px; 
   color: var(--text-main);
 }
 
@@ -69,79 +67,79 @@ header {
 }
 
 .header-content nav a:hover {
-  color: var(--primary); /* تلوين خفيف عند التمرير */
+  color: var(--primary); 
 }
 
-/* --- 5. تنسيق المحتوى الرئيسي والشبكة (Grid) --- */
+
 main {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* جعل قسم النموذج أعرض قليلاً للشعور بالاحترافية */
-  gap: 32px; /* زيادة المسافة بين العمودين لـ " Breathing Room" */
+  grid-template-columns: 1.2fr 1fr; 
+  gap: 32px; 
   max-width: 1200px;
-  margin: 3rem auto; /* زيادة المسافة العلوية والسفلية */
+  margin: 3rem auto; 
   padding: 0 2rem;
 }
 
-/* تصميم المربعات (Cards) بأسلوبrefined — */
+
 .form-panel, .results-panel {
   background-color: var(--card-bg);
-  padding: 2.5rem; /* زيادة الحشو الداخلي */
-  border-radius: 12px; /* زوايا دائرية أنعم قليلاً */
-  box-shadow: var(--soft-shadow); /* تطبيق الظل الناعم */
-  border: 1px solid rgba(226, 223, 216, 0.5); /* حد شفاف جداً */
+  padding: 2.5rem; 
+  border-radius: 12px; 
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(226, 223, 216, 0.5); 
 }
 
-/* --- 6. تصميم حقول النموذج (Form) والدعوة الهدوء — */
+
 .input-group {
-  margin-bottom: 1.75rem; /* مسافة أكبر قليلاً */
+  margin-bottom: 1.75rem; 
 }
 
 label {
   display: block;
   margin-bottom: 0.7rem;
-  font-weight: 600; /* خط أعرض قليلاً للوضوح */
-  font-size: 0.9rem; /* أصغر قليلاً لمظهر "أنيق" */
+  font-weight: 600;
+  font-size: 0.9rem; 
   color: var(--text-main);
-  text-transform: uppercase; /* جعل العناوين حروفاً كبيرة لمظهر منظم */
-  letter-spacing: 1px; /* زيادة المسافة بين حروف العنوان */
+  text-transform: uppercase; 
+  letter-spacing: 1px;
 }
 
 textarea, input[type="file"] {
   width: 100%;
-  padding: 1rem; /* زيادة الحشو الداخلي لراحة الكتابة */
+  padding: 1rem; 
   border: 1px solid var(--border-color);
-  border-radius: 8px; /* زوايا أنعم */
+  border-radius: 8px;
   background-color: #FFFFFF;
   font-size: 1rem;
   color: var(--text-main);
-  transition: all 0.2s ease; /* حركة ناعمة لكل التغييرات */
+  transition: all 0.2s ease;
 }
 
-/* تأثير الـ Placeholder هادئ */
+
 textarea::placeholder {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
 
-/* تأثير الـ Focus (التركيز) - الأهم للهدوء النفسي */
+
 textarea:focus {
-  border-color: var(--primary); /* تلوين الحد بالأخضر الهادئ */
+  border-color: var(--primary); 
   outline: none;
-  /* إضافة توهج (Shadow) أخضر هادئ وناعم جداً حول الحقل */
+ 
   box-shadow: 0 0 0 4px rgba(118, 159, 142, 0.15); 
-  background-color: #FAFBFB; /* تغيير خلفية الحقل بشكل غير ملحوظ لإشعار المستخدم بالتركيز */
+  background-color: #FAFBFB;
 }
 
-/* تنسيق زر الرفع */
+
 input[type="file"] {
   padding: 0.75rem;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-/* --- 7. تصميم زر الإرسال (Refined Button) --- */
+
 button {
-  background-color: var(--primary); /* الأخضر المريمي الهادئ */
+  background-color: var(--primary); 
   color: var(--text-light);
   border: none;
   padding: 1rem 1.5rem;
